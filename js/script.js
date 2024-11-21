@@ -18,4 +18,33 @@ document.addEventListener('DOMContentLoaded', () => {
         button.src = defaultSrc; // Возвращаем изображение кнопки
         container.classList.remove('hover'); // Убираем hover класс
     });
+
+
+
+    const languageSwitch = document.querySelector('.language-switch');
+    const languageMenu = document.querySelector('.language-menu');
+    const languageSpan = document.querySelector('.language-switch span');
+
+    // Переключение отображения меню и вращение иконки
+    languageSwitch.addEventListener('click', () => {
+        languageSwitch.classList.toggle('active'); // Добавляем/убираем класс active
+    });
+
+    // Выбор языка
+    languageMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'LI') {
+            const selectedLang = e.target.textContent; // Получаем выбранный язык
+            languageSpan.textContent = selectedLang; // Обновляем текст в переключателе
+            languageSwitch.classList.remove('active'); // Закрываем меню
+        }
+    });
+
+    // Закрытие меню при клике вне области
+    document.addEventListener('click', (e) => {
+        if (!languageSwitch.contains(e.target)) {
+            languageSwitch.classList.remove('active');
+        }
+    });
+
+
 });

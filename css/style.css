@@ -43,24 +43,7 @@ body, html {
     max-height: 70px; /* Размер логотипа */
 }
 
-/* Блок переключения языка */
-.language-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Расстояние между элементами */
-    font-size: 24px;
-    font-family: 'Chakra Petch', sans-serif;
-    cursor: pointer;
-}
 
-.language-switch .icon {
-    max-height: 36px; /* Размер иконок */
-}
-
-.language-switch span {
-    font-weight: 500;
-    color: #fff;
-}
 
 /* Центрируем контент */
 main {
@@ -117,7 +100,7 @@ main {
 /* Кавычка слева */
 .centered-content .title::before {
     content: '«';
-    margin-right: 15px;
+    margin-right: 15px; 
 }
 
 /* Кавычка справа */
@@ -153,3 +136,66 @@ main {
 }
 
 
+
+/**************    language     *******************/
+
+.language-menu {
+    display: none; /* Меню скрыто */
+    position: absolute;
+    top: calc(9% + 10px);
+    background: #222; /* Цвет фона списка */
+
+    border-radius: 5px;
+    list-style: none;
+    z-index: 1000;
+    width: 175px; /* Ширина списка */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень */
+    padding: 0px;
+}
+
+
+/* Стили для элементов списка */
+.language-menu li {
+    font-family: 'Chakra Petch';
+    padding: 10px 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background 0.2s ease;
+}
+
+/* Эффект наведения на элементы списка */
+.language-menu li:hover {
+    background: #FFCE00;
+    color: black;
+}
+
+/* Показываем меню, когда класс active добавлен */
+.language-switch.active .language-menu {
+    display: block;
+}
+
+.language-switch.active .arrow-icon {
+    transform: rotate(180deg); /* Поворот стрелки на 90 градусов */
+    transition: transform 0.3s ease; /* Плавный переход при вращении */
+}
+
+/* Блок переключения языка */
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между элементами */
+    font-size: 24px;
+    font-family: 'Chakra Petch', sans-serif;
+    cursor: pointer;
+}
+
+.language-switch .icon {
+    max-height: 36px; /* Размер иконок */
+}
+
+.language-switch span {
+    font-weight: 500;
+    color: #fff;
+}
