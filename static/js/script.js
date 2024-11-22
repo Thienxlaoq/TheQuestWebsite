@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Кнопка
     const button = document.querySelector('.cta-button');
     const container = document.querySelector('.centered-content');
-    const defaultSrc = 'img/button-default.svg';
-    const hoverSrc = 'img/button-hover.svg';
+    const defaultSrc = 'static/img/button-default.svg';
+    const hoverSrc = 'static/img/button-hover.svg';
 
     button.addEventListener('mouseover', () => {
         button.src = hoverSrc;
