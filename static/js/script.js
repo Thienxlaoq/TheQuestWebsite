@@ -1,3 +1,6 @@
+console.log("Script.js подключен");
+console.log("Текущий путь: ", window.location.pathname);
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('The Quest ready!');
 
@@ -39,19 +42,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    const currentPath = window.location.pathname;
-
-    const pathToIconId = {
-        '/info_center': 'infocenter-icon',
-        '/map': 'map-icon',
-        '/profile': 'profile-icon',
-    };
-
-    // Устанавливаем активный класс
-    const activeIconId = pathToIconId[currentPath];
-    if (activeIconId) {
-        document.getElementById(activeIconId).parentElement.classList.add('active');
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+        const pathToIconId = {
+            '/info_center': 'infocenter-icon',
+            '/map': 'map-icon',
+            '/profile': 'profile-icon',
+        };
+    
+        const currentPath = window.location.pathname;
+        const activeIconId = pathToIconId[currentPath];
+    
+        if (activeIconId) {
+            // Убираем класс active со всех иконок
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach((link) => link.classList.remove('active'));
+    
+            // Устанавливаем класс active для текущего пути
+            const activeIcon = document.getElementById(activeIconId);
+            if (activeIcon) {
+                activeIcon.parentElement.classList.add('active');
+            }
+        }
+    });
+    
 });
 
 
