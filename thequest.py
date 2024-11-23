@@ -18,7 +18,13 @@ def home():
     current_month_name = now.strftime("%B")  # Название месяца
     now_year = now.year
 
-    return render_template('home.html', now_day=now_day, current_month_name=current_month_name, now_year=now_year)
+    return render_template(
+        'home.html',
+        now_day=now_day,
+        current_month_name=current_month_name,
+        now_year=now_year,
+        now=now
+    )
 
 
 if __name__ == '__main__':
