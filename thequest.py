@@ -9,7 +9,7 @@ app = Flask(__name__, template_folder='templates')
 @app.route('/')
 @app.route('/map')
 def index():
-    return render_template('map.html')
+    return render_template('map.html', active_page='map')
 
 
 @app.route('/info_center')
@@ -20,7 +20,7 @@ def info_center():
     now_year = now.year
 
     return render_template(
-        'info_center.html',
+        'info_center.html', active_page='info_center',
         now_day=now_day,
         current_month_name=current_month_name,
         now_year=now_year,
@@ -29,7 +29,7 @@ def info_center():
 
 @app.route('/profile')
 def profile():
-    return render_template('profile.html')
+    return render_template('profile.html', active_page='profile')
 
 
 

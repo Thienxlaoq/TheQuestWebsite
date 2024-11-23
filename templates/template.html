@@ -46,17 +46,28 @@
 
   <div class="navigation-bar">
     <div class="navigation-icons">
-        <a href="/info_center" class="nav-link">
-            <img src="static/img/infocenter-icon.svg" alt="InfoCenter" class="nav-icon" id="infocenter-icon">
+        <a href="/info_center" class="nav-link {% if active_page == 'info_center' %}active{% else %}inactive{% endif %}">
+            <img 
+                src="{% if active_page == 'info_center' %}static/img/infocenter-icon-active.svg{% else %}static/img/infocenter-icon.svg{% endif %}" 
+                alt="InfoCenter" 
+                class="nav-icon">
         </a>
-        <a href="/map" class="nav-link">
-          <img src="static/img/map-icon.svg" alt="Map" class="nav-icon" id="map-icon">
-      </a>      
-        <a href="/profile" class="nav-link">
-            <img src="static/img/profile-icon.svg" alt="Profile" class="nav-icon" id="profile-icon">
+        <a href="/map" class="nav-link {% if active_page == 'map' %}active{% else %}inactive{% endif %}">
+            <img 
+                src="{% if active_page == 'map' %}static/img/map-icon-active.svg{% else %}static/img/map-icon.svg{% endif %}" 
+                alt="Map" 
+                class="nav-icon">
+        </a>
+        <a href="/profile" class="nav-link {% if active_page == 'profile' %}active{% else %}inactive{% endif %}">
+            <img 
+                src="{% if active_page == 'profile' %}static/img/profile-icon-active.svg{% else %}static/img/profile-icon.svg{% endif %}" 
+                alt="Profile" 
+                class="nav-icon">
         </a>
     </div>
-  </div>
+</div>
+
+
 
 
   <script src="static/js/script.js"></script>

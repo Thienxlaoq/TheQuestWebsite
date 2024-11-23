@@ -239,10 +239,7 @@ main {
 
 /* Navigation icon */
 .nav-icon {
-    width: 48px;
-    height: 48px;
-    filter: brightness(1); /* Белый цвет по умолчанию */
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 /* Hover эффект */
@@ -250,12 +247,19 @@ main {
     transform: scale(1.05); /* Увеличение иконки */
 }
 
-/* Активная иконка */
+/* Размер для активной иконки */
 .nav-link.active .nav-icon {
-    filter: none;
-    fill: #FFCE00; /* Желтый цвет */
-    color: #FFCE00;
+    width: 48px;
+    height: 48px;
 }
+
+/* Размер для неактивных иконок */
+.nav-link.inactive .nav-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
 
 
 
