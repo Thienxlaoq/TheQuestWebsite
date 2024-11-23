@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname;
 
     const pathToIconId = {
-        '/infocenter': 'infocenter-icon',
+        '/info_center': 'infocenter-icon',
         '/map': 'map-icon',
         '/profile': 'profile-icon',
     };
