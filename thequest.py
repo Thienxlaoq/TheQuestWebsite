@@ -4,14 +4,14 @@ app = Flask(__name__, template_folder='templates')
 
 
 @app.route('/')
-@app.route('/home')
+@app.route('/map')
 def index():
-    return render_template('index.html')
+    return render_template('map.html')
 
 
-@app.route('/contacts')
+@app.route('/home')
 def contacts():
-    return render_template('contacts.html')
+    return render_template('home.html')
 
 
 app.run(debug=True)
