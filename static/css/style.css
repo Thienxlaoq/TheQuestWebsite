@@ -23,7 +23,7 @@ body, html {
 /* Header */
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Элементы выравниваются вправо */
     align-items: center;
     margin: 48px 250px 0;
 }
@@ -31,6 +31,92 @@ body, html {
 /* Логотип */
 .header .logo img {
     max-height: 70px; /* Размер логотипа */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Расстояние между кнопкой и переключателем языка */
+}
+
+/* Переключение языка */
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px; 
+    font-weight: 500;
+    position: relative; /* Для корректного позиционирования меню */
+    cursor: pointer;
+}
+
+.language-switch .icon,
+.language-switch .arrow-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.language-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Меню всегда под переключателем */
+    right: 0;
+    background: #222;
+    border-radius: 5px;
+    list-style: none;
+    z-index: 1000;
+    width: 175px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    overflow: hidden; 
+}
+
+/* Стили для элементов списка */
+.language-menu li {
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background 0.2s ease;
+}
+
+.language-menu li:hover {
+    background: #FFCE00;
+    color: black;
+}
+
+/* Hover эффект */
+.language-switch.active .language-menu {
+    display: block;
+}
+
+.language-switch.active .arrow-icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+/* Кнопка OUR SOCIALS */
+.our-socials-btn {
+    width: 200px;
+    height: 50px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 21px;
+    letter-spacing: -1%; /* Межбуквенное расстояние */
+    color: #5EF6FF; /* Цвет текста */
+    background: none; /* Убираем фон */
+    border: 2px solid #5EF6FF; /* Обводка кнопки */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Плавный переход при hover */
+}
+
+/* Hover-эффект для OUR SOCIALS */
+.our-socials-btn:hover {
+    background: #5EF6FF; /* Заполняем цветом */
+    color: #111; /* Цвет текста при наведении */
 }
 
 /* Центрируем контент */
@@ -128,59 +214,4 @@ main {
 
 
 
-/* Переключение языка */
-.language-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 24px; /* Уменьшили шрифт для адаптивности */
-    font-weight: 500;
-    position: relative; /* Для корректного позиционирования меню */
-    cursor: pointer;
-}
 
-.language-switch .icon,
-.language-switch .arrow-icon {
-    width: 36px;
-    height: 36px;
-}
-
-.language-menu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 5px); /* Меню всегда под переключателем */
-    right: 0;
-    background: #222;
-    border-radius: 5px;
-    list-style: none;
-    z-index: 1000;
-    width: 175px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 0;
-    overflow: hidden; /* Скрываем выступающие элементы */
-}
-
-/* Стили для элементов списка */
-.language-menu li {
-    padding: 10px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    transition: background 0.2s ease;
-}
-
-.language-menu li:hover {
-    background: #FFCE00;
-    color: black;
-}
-
-/* Hover эффект */
-.language-switch.active .language-menu {
-    display: block;
-}
-
-.language-switch.active .arrow-icon {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-}
