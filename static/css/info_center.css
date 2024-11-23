@@ -7,30 +7,32 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    margin: 0;
 }
 
 .info {
-    margin: 0px 250px 0;
+    margin: 0px 225px 0;
     text-align: left;
     gap: 25px;
-    margin-top: 225px;
 }
 
-.main-content h3 {
+.main-content p {
     font-size: 15px;
     border: solid 3px #5EF5FF;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #5EF5FF;
     height: 31px;
     width: 150px;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    text-align: center; 
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    /* font-family: ; */
 }
 
-.main-text h1{
+.main-text p{
+    margin: 0;
     font-size: 92px;
     line-height: 92px;
 }
