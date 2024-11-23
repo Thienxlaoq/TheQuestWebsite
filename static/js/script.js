@@ -36,6 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
             languageSwitch.classList.remove('active');
         }
     });
+
+
+
+    const currentPath = window.location.pathname;
+
+    const pathToIconId = {
+        '/infocenter': 'infocenter-icon',
+        '/map': 'map-icon',
+        '/profile': 'profile-icon',
+    };
+
+    // Устанавливаем активный класс
+    const activeIconId = pathToIconId[currentPath];
+    if (activeIconId) {
+        document.getElementById(activeIconId).parentElement.classList.add('active');
+    }
 });
 
 

@@ -39,9 +39,24 @@
     </div>
   </header>
 
-
   {% block body %}
   {% endblock %}
+
+  <div class="navigation-bar">
+    <div class="navigation-icons">
+        <a href="/infocenter" class="nav-link {% if request.path == '/infocenter' %}active{% endif %}">
+            <img src="static/img/infocenter-icon.svg" alt="InfoCenter" class="nav-icon" id="infocenter-icon">
+        </a>
+        <a href="/map" class="nav-link {% if request.path == '/map' %}active{% endif %}">
+            <img src="static/img/map-icon.svg" alt="Map" class="nav-icon" id="map-icon">
+        </a>
+        <a href="/profile" class="nav-link {% if request.path == '/profile' %}active{% endif %}">
+            <img src="static/img/profile-icon.svg" alt="Profile" class="nav-icon" id="profile-icon">
+        </a>
+    </div>
+  </div>
+
+
 
 </body>
 </html>
