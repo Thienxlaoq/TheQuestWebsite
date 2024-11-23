@@ -1,6 +1,7 @@
 .sub-title {
-    color: gray;
-    font-size: 20px;
+    color: #797979;
+    font-size: 24px;
+    font-weight: 800;
 }
 
 .main-content {
@@ -8,12 +9,19 @@
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    margin-bottom: 25px; /* Отступ снизу */
 }
 
+
 .info {
-    margin: 0px 225px 0;
+    margin: 0px 250px 0;
     text-align: left;
-    gap: 25px;
+}
+
+.info a {
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    font-size: 18px;
+    color: #797979;
 }
 
 .main-content p {
@@ -31,8 +39,10 @@
     /* font-family: ; */
 }
 
-.main-text p{
+.main-text p {
     margin: 0;
     font-size: 92px;
     line-height: 92px;
+    font-weight: bold;
+    margin-bottom: 25px; /* Отступ снизу */
 }
