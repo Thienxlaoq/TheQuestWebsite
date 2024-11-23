@@ -253,8 +253,10 @@ main {
 /* Активная иконка */
 .nav-link.active .nav-icon {
     filter: none;
-    fill: #FFCE00; /* Для SVG-иконок */
+    fill: #FFCE00; /* Желтый цвет */
+    color: #FFCE00;
 }
+
 
 
 
