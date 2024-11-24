@@ -152,5 +152,19 @@ main {
     color: #5EF6FF; /* Цвет текста при наведении */
 }
 
+.privacy-block {
+    position: fixed;
+    bottom: 120px; /* Отступ от низа */
+    right: 250px; /* Отступ от правого края */
+    display: flex;
+    flex-direction: row;
+    gap: 15px; /* Отступ между текстами */
+    color: #FFF; /* Цвет текста */
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
 
-
+.privacy-text{
+    color: #B1B1B1;
+}
