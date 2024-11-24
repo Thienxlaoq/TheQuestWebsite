@@ -39,5 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-
-
+function showContent(sectionId) {
+    // Скрыть весь контент
+    document.querySelectorAll('.content').forEach((content) => {
+      content.style.display = 'none';
+    });
+  
+    // Показать выбранный контент
+    document.getElementById(sectionId).style.display = 'block';
+  
+    // Убрать "active" со всех кнопок
+    document.querySelectorAll('.menu-button').forEach((button) => {
+      button.classList.remove('active');
+    });
+  
+    // Добавить "active" к нажатой кнопке
+    event.currentTarget.classList.add('active');
+  };

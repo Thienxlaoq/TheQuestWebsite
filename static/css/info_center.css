@@ -1,3 +1,12 @@
+body, html {
+    background: url('/static/img/Горы.png') no-repeat center center/cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Высота экрана */
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    font-family: 'Chakra Petch', sans-serif;
+}
+
 .sub-title {
     color: #797979;
     font-size: 24px;
@@ -12,6 +21,9 @@
     margin-bottom: 25px; /* Отступ снизу */
 }
 
+.container {
+    padding-top: 225px;
+}
 
 .info {
     margin: 0px 250px 0;
@@ -36,7 +48,6 @@
     align-items: center;
     text-align: center;
     margin: 0;
-    /* font-family: ; */
 }
 
 .main-text p {
@@ -45,4 +56,47 @@
     line-height: 92px;
     font-weight: bold;
     margin-bottom: 25px; /* Отступ снизу */
+    color: white;
+}
+
+
+/* кнопки news, updates, events */
+  
+.menu {
+    margin: 0px 250px 0;
+    margin-top: 90px;
+}
+
+.menu-button {
+    width: 200px;
+    height: 60px;
+    background-color: #0D0D0D;
+    color: #ACACAC;
+    border: none;
+    font-size: 16px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-button:not(.active):hover {
+    background-color: grey;
+}
+
+.menu-button.active {
+    color: gold;
+    border-top: 2px solid #FFCE00; /* Подчеркивание активной кнопки */
+}
+
+.content {
+    padding: 20px;
+    font-size: 18px;
+}
+  
+  
+.news-events-updates{
+    background: url('../img/HeroSection.png') no-repeat center center/cover;
+    background-color: #111;
+    color: antiquewhite;
 }
