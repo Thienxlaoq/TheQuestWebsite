@@ -9,11 +9,11 @@ app = Flask(__name__, template_folder='templates')
 @app.route('/')
 @app.route('/map')
 def index():
-<<<<<<< HEAD
-    return render_template('map.html', header_class='transparent-full-header', scroll_effect=True, active_page='map')
-=======
-    return render_template('map.html', active_page='map')
->>>>>>> f28f120bdf752dd3f123064c0df4a1ec8ebf2edf
+    return render_template(
+        'map.html',
+        header_class='transparent-full-header',
+        active_page='map'
+    )
 
 
 @app.route('/info_center')
