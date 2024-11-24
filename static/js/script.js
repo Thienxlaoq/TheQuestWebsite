@@ -37,8 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    
-    
+
 });
 
 function showContent(sectionId) {
