@@ -8,24 +8,61 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/info_center.css') }}">
 {% endblock %}
 
+
 {% block body %}
   <main>
-    <div class="info">
+    <div class="container">
+      <div class="info">
+        <div class="main-content">
+          <span class="sub-title">{{ now_day }} {{ current_month_name }} {{ now_year }}</span>
+          <p>NEW POST</p>
 
-      <div class="main-content">
-        <span class="sub-title">{{ now_day }} {{ current_month_name }} {{ now_year }}</span>
-        <p>NEW POST</p>
+        </div>
 
+        <div class="main-text">
+          <p>We launched «The Quest» website!</p>
+        </div>
+
+        <div>
+          <a href="/map">READ MORE ➞</a>
+        </div>
       </div>
 
-      <div class="main-text">
-        <p>We launched «The Quest» website!</p>
+      <div class="menu">
+        <button class="menu-button active" onclick="showContent('news')">NEWS</button>
+        <button class="menu-button" onclick="showContent('events')">EVENTS</button>
+        <button class="menu-button" onclick="showContent('updates')">UPDATES</button>
       </div>
 
-      <div>
-        <a href="/map">READ MORE ➞</a>
-      </div>
     </div>
-    
+    <div class="news-events-updates">
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+      <div class="content" id="news">This is the NEWS content.</div>
+
+      <div class="content" id="events" style="display: none;">This is the EVENTS content.</div>
+      <div class="content" id="updates" style="display: none;">This is the UPDATES content.</div>
+    </div>
+    <script src="static/js/script.js"></script>
   </main>
 {% endblock %}

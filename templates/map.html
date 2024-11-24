@@ -4,6 +4,11 @@
   The Quest
 {% endblock %}
 
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+
 {% block body %}
   <main>
     <div class="centered-content">

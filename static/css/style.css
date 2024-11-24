@@ -2,7 +2,6 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Chakra Petch', sans-serif;
     color: #fff;
     background: url('../img/HeroSection.png') no-repeat center center/cover;
     background-color: #111;
@@ -20,105 +19,6 @@ body, html {
     color: #FF4E47;
 }
 
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between; /* Элементы выравниваются вправо */
-    align-items: center;
-    margin: 48px 250px 0;
-}
-
-/* Логотип */
-.header .logo img {
-    max-height: 70px; /* Размер логотипа */
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 30px; /* Расстояние между кнопкой и переключателем языка */
-}
-
-/* Переключение языка */
-.language-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 20px; 
-    font-weight: 500;
-    position: relative; /* Для корректного позиционирования меню */
-    cursor: pointer;
-}
-
-.language-switch .icon,
-.language-switch .arrow-icon {
-    width: 36px;
-    height: 36px;
-}
-
-.language-menu {
-    display: none;
-    position: absolute;
-    top: 100%; /* Меню всегда под переключателем */
-    right: 0;
-    background: #222;
-    border-radius: 5px;
-    list-style: none;
-    z-index: 1000;
-    width: 175px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    padding: 0;
-    overflow: hidden; 
-}
-
-/* Стили для элементов списка */
-.language-menu li {
-    padding: 10px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    transition: background 0.2s ease;
-}
-
-.language-menu li:hover {
-    background: #FFCE00;
-    color: black;
-}
-
-/* Hover эффект */
-.language-switch.active .language-menu {
-    display: block;
-}
-
-.language-switch.active .arrow-icon {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-}
-
-/* Кнопка OUR SOCIALS */
-.our-socials-btn {
-    width: 200px;
-    height: 50px;
-    font-family: 'Chakra Petch', sans-serif;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 21px;
-    letter-spacing: -1%; /* Межбуквенное расстояние */
-    color: #5EF6FF; /* Цвет текста */
-    background: none; /* Убираем фон */
-    border: 2px solid #5EF6FF; /* Обводка кнопки */
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Плавный переход при hover */
-}
-
-/* Hover-эффект для OUR SOCIALS */
-.our-socials-btn:hover {
-    background: #5EF6FF; /* Заполняем цветом */
-    color: #111; /* Цвет текста при наведении */
-}
-
 /* Центрируем контент */
 main {
     display: flex;
@@ -127,6 +27,7 @@ main {
     height: calc(100vh - 400px);
     text-align: center;
     position: relative;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 /* Блок с текстом и кнопкой */
@@ -211,53 +112,3 @@ main {
 .centered-content:hover .title {
     color: #FFCE00; /* Специальный цвет для "The Quest" */
 }
-
-/* Navigation bar */
-.navigation-bar {
-    position: fixed;
-    bottom: 100px; /* Отступ от низа */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 308px;
-    height: 60px;
-    background-color: rgba(37, 37, 37, 0.25);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень */
-    z-index: 1000;
-}
-
-/* Navigation icons */
-.navigation-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 55px; /* Расстояние между иконками */
-}
-
-/* Navigation icon */
-.nav-icon {
-    width: 48px;
-    height: 48px;
-    filter: brightness(1); /* Белый цвет по умолчанию */
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* Hover эффект */
-.nav-icon:hover {
-    transform: scale(1.05); /* Увеличение иконки */
-}
-
-/* Активная иконка */
-.nav-link.active .nav-icon {
-    filter: none;
-    fill: #FFCE00; /* Желтый цвет */
-    color: #FFCE00;
-}
-
-
-
-
-

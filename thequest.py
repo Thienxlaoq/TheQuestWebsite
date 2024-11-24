@@ -9,7 +9,7 @@ app = Flask(__name__, template_folder='templates')
 @app.route('/')
 @app.route('/map')
 def index():
-    return render_template('map.html')
+    return render_template('map.html', header_class='transparent-full-header', scroll_effect=True)
 
 
 @app.route('/info_center')
@@ -24,13 +24,14 @@ def info_center():
         now_day=now_day,
         current_month_name=current_month_name,
         now_year=now_year,
-        now=now
+        now=now,
+        header_class='black-header',
     )
+
 
 @app.route('/profile')
 def profile():
     return render_template('profile.html')
-
 
 
 if __name__ == '__main__':

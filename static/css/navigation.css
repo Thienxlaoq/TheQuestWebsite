@@ -1,0 +1,44 @@
+/* Navigation bar */
+.navigation-bar {
+    position: fixed;
+    bottom: 100px; /* Отступ от низа */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 308px;
+    height: 60px;
+    background-color: rgba(37, 37, 37, 0.25);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень */
+    z-index: 1000;
+}
+
+/* Navigation icons */
+.navigation-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px; /* Расстояние между иконками */
+}
+
+/* Navigation icon */
+.nav-icon {
+    width: 48px;
+    height: 48px;
+    filter: brightness(1); /* Белый цвет по умолчанию */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover эффект */
+.nav-icon:hover {
+    transform: scale(1.05); /* Увеличение иконки */
+}
+
+/* Активная иконка */
+.nav-link.active .nav-icon {
+    filter: none;
+    fill: #FFCE00; /* Желтый цвет */
+    color: #FFCE00;
+}
