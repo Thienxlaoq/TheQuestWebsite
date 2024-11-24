@@ -112,7 +112,45 @@ main {
     color: #FFCE00; /* Специальный цвет для "The Quest" */
 }
 
+.fixed-text-block {
+    position: fixed;
+    bottom: 100px; /* Отступ от низа */
+    left: 250px; /* Отступ слева */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Отступ между текстами */
+    color: #FFF; /* Цвет текста */
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 18px;
+    text-align: left;
+}
 
+/* Стили для текста в блоке */
+.first-text {
+    font-weight: 500;
+    font-size: 17px;
+    color: #5EF6FF; /* Цвет текста */
+    margin: 0px;
+    font-weight: bold;
+}
+
+.second-text {
+    font-weight: 500;
+    font-size: 16px;
+    color: #B1B1B1; /* Цвет текста */
+    margin: 0px;
+    font-weight: 300;
+}
+
+/* Стили для ссылки */
+.fixed-text-block a {
+    color: inherit; /* Цвет ссылки унаследует цвет текста блока */
+}
+
+/* Ховер-эффект для ссылки */
+.fixed-text-block a:hover {
+    color: #5EF6FF; /* Цвет текста при наведении */
+}
 
 
 
