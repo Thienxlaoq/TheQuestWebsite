@@ -18,17 +18,8 @@ def index():
 
 @app.route('/info_center')
 def info_center():
-    now = datetime.datetime.now()
-    now_day = now.day
-    current_month_name = now.strftime("%B")  # Название месяца
-    now_year = now.year
-
     return render_template(
         'info_center.html', active_page='info_center',
-        now_day=now_day,
-        current_month_name=current_month_name,
-        now_year=now_year,
-        now=now,
         header_class='black-header',
     )
 

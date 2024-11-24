@@ -38,7 +38,6 @@ main {
     cursor: pointer; /* Для работы hover на всем блоке */
     transition: all 0.2s;
     position: relative;
-    margin-top: 200px;
 }
 
 .centered-text {
@@ -64,14 +63,13 @@ main {
 .centered-content .title {
     font-size: 128px;
     font-family: 'Chakra Petch', sans-serif;
-    font-weight: bold; 
+    font-weight: bold;
     color: transparent;
     -webkit-text-stroke: 2px #FFCE00; /* Обводка текста */
     line-height: 128px; /* Межстрочное расстояние */
     margin: 0px;
     position: relative; /* Для управления позиционированием псевдоэлементов */
-    transition: all 0.2s ; /* Эффект при уходе мыши */
-
+    transition: all 0.2s; /* Эффект при уходе мыши */
 }
 
 /* Кавычка слева */
