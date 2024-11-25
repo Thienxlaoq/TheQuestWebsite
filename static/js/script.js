@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Закрытие окна при клике вне содержимого
         modal.addEventListener('click', (event) => {
-            if (!event.target.closest('.modal-content')) {
+            if (!event.target.closest('.modal-content') && event.target === modal) {
                 modal.style.display = 'none';
             }
         });
@@ -153,4 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     initCtaButtonHover();
+
+
+    
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.forEach(item => item.classList.remove('active')); // Удаляем класс active у всех
+            this.classList.add('active'); // Добавляем класс active только к текущей
+        });
+    });
 });

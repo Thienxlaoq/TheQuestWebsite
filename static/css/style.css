@@ -129,7 +129,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    bottom: 100px;
+    bottom: 45px;
     position: fixed;
 }
 

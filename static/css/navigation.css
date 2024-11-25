@@ -1,7 +1,7 @@
 /* Navigation bar */
 .navigation-bar {
     position: fixed;
-    bottom: 100px; /* Отступ от низа */
+    bottom: 45px; /* Отступ от низа */
     left: 50%;
     transform: translateX(-50%);
     width: 308px;
@@ -30,17 +30,14 @@
 
 /* Hover эффект */
 .nav-icon:hover {
-    transform: scale(1.05); /* Увеличение иконки */
+    transform: scale(1.1); /* Увеличение иконки */
 }
 
 /* Размер для активной иконки */
-.nav-link.active .nav-icon {
+.nav-link.active .map-icon{
     width: 48px;
     height: 48px;
 }
 
-/* Размер для неактивных иконок */
-.nav-link.inactive .nav-icon {
-    width: 40px;
-    height: 40px;
-}
+
+
