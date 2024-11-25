@@ -7,7 +7,7 @@ document.getElementById('close-block').addEventListener('click', function() {
     document.getElementById('overlay').style.display = 'none';
 });
 
-// Обработчик клика вне блока
+// Обработчик клика вне блока для первого оверлея
 document.addEventListener('click', function(event) {
     const overlay = document.getElementById('overlay');
     
@@ -17,12 +17,30 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// GET THE QUEST
+document.querySelector('.get-the-quest').addEventListener('click', function() {
+    document.getElementById('overlaytwo').style.display = 'flex'; // Используйте flex для центрирования
+});
+
+document.getElementById('close-block').addEventListener('click', function() {
+    document.getElementById('overlaytwo').style.display = 'none';
+});
+
+// Обработчик клика вне блока для второго оверлея
+document.addEventListener('click', function(event) {
+    const overlaytwo = document.getElementById('overlaytwo');
+    
+    // Проверяем, был ли клик вне блока
+    if (overlaytwo.style.display === 'flex' && !document.getElementById('content-block').contains(event.target) && event.target !== document.querySelector('.get-the-quest')) {
+        overlaytwo.style.display = 'none';
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('The Quest ready!');
 
     // Кнопка
     const button = document.querySelector('.cta-button');
-    const container = document.querySelector('.centered-content');
     const defaultSrc = 'static/img/button-default.svg';
     const hoverSrc = 'static/img/button-hover.svg';
 
@@ -56,11 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-function showContent(sectionId) {
+function showContent(event, sectionId) {
     // Скрыть весь контент
     document.querySelectorAll('.content').forEach((content) => {
-      content.style.display = 'none';
+        content.style.display = 'none';
     });
   
     // Показать выбранный контент
@@ -68,9 +85,9 @@ function showContent(sectionId) {
   
     // Убрать "active" со всех кнопок
     document.querySelectorAll('.menu-button').forEach((button) => {
-      button.classList.remove('active');
+        button.classList.remove('active');
     });
   
     // Добавить "active" к нажатой кнопке
     event.currentTarget.classList.add('active');
-  };
+}
