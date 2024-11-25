@@ -9,9 +9,9 @@
 {% endblock %}
 
 
-
+{% block body %}
   <main>
-    {% block body %}
+
     <div class="container">
       <div class="info">
         <div class="main-content">
@@ -25,7 +25,10 @@
         </div>
 
         <div>
-          <a href="/map">READ MORE ➞</a>
+          <a href="/map">
+            READ MORE 
+            <img src="/static/img/right-arrow-icon.svg" alt="Icon" class="right-arrow-icon" />
+          </a>
         </div>
       </div>
 
