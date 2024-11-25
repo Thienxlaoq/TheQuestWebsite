@@ -191,7 +191,8 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(227, 142, 142, 0.1);
+    background-color: rgba(255, 204, 0, 0.034);
+    z-index: 2;
 }
 
 #overlaytwo #content-block {
@@ -201,7 +202,6 @@ main {
     height: 650px;
     max-width: 90%; /* чтобы блок не выходил за пределы экрана на маленьких устройствах */
     background-color: rgb(13, 13, 13);
-    z-index: 2;
     display: flex;
     flex-direction: column;
     border: 1px solid #2F2F2F; /* Рамка толщиной 1px с нужным цветом */
@@ -235,6 +235,10 @@ main {
 #overlaytwo #main-text p{
     font-size: 38px;
     color: #FFCE00;
+}
+
+#overlaytwo #description p{
+    font-size: 18px;
 }
 
 #overlaytwo #description strong{
