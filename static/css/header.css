@@ -148,8 +148,8 @@
     height: 850px;
     max-width: 90%; /* Адаптивность для маленьких экранов */
     background-color: rgb(0, 0, 0); /* Фон */
-    border: 1px solid #2F2F2F; /* Рамка толщиной 1px с нужным цветом */
     z-index: 2;
+    border: 1px solid #2F2F2F; /* Рамка толщиной 1px с нужным цветом */
     box-sizing: border-box; /* Учет рамки в размерах блока */
     border-radius: 10px;
 }

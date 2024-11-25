@@ -170,3 +170,68 @@ main {
     color: #B1B1B1;
     padding-left: 30px;
 }
+
+
+/* GOT THE QUEST */
+#overlaytwo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(227, 142, 142, 0.1);
+}
+
+#overlaytwo #content-block {
+    padding-top: 50px;
+    position: fixed;
+    width: 700px;
+    height: 650px;
+    max-width: 90%; /* чтобы блок не выходил за пределы экрана на маленьких устройствах */
+    background-color: rgb(13, 13, 13);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2F2F2F; /* Рамка толщиной 1px с нужным цветом */
+    box-sizing: border-box; /* Учет рамки в размерах блока */
+    border-radius: 10px;
+}
+
+#overlaytwo #close-block {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    width: 30px; 
+    height: 30px;
+    background-color: transparent; 
+    border: none;
+    cursor: pointer;
+}
+
+#overlaytwo #block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#overlaytwo #main-text {
+    margin: 0;
+    padding: 0;
+    
+}
+#overlaytwo #main-text p{
+    font-size: 38px;
+    color: #FFCE00;
+}
+
+#overlaytwo #description strong{
+    color: #FFCE00;
+}
+
+#overlaytwo #chill-man {
+    margin-bottom: 35px;
+}
