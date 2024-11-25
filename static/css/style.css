@@ -97,11 +97,20 @@ main {
     width: 100%;
 }
 
-.cta-button {
-    width: auto;
-    height: auto;
+.cta-button-container .get-the-quest {
+    width: 380px;
+    height: 68px;
+    background: url(/static/img/button-default.svg);
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+}
+
+.get-the-quest:hover {
+    width: 380px;
+    height: 68px;
+    background: url(/static/img/button-hover.svg);
+    border: none;
+    cursor: pointer;
 }
 
 /* Hover эффект для всего блока */
