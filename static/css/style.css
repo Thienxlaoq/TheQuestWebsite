@@ -126,29 +126,40 @@ main {
 
 .fixed-text-block {
     padding-left: 250px; /* Отступ слева */
-    gap: 15px; /* Отступ между текстами */
     color: #FFF; /* Цвет текста */
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 18px;
+    gap: 15px;
     text-align: left;
-    color: #B1B1B1;
+    color: #B1B1B1;   
 }
 
 .fixed-text-block .first-text {
     color: #5EF6FF;
+    margin: 0px;
     margin-bottom: 15px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.fixed-text-block .second-text {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .privacy-block {
     padding-right: 250px; /* Отступ справа */
-    gap: 15px; /* Отступ между текстами */
     color: #FFF; /* Цвет текста */
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .second-text a{
     color: #B1B1B1;
+    margin: 0;
+    padding: 0;
 }
 
 .second-text a:hover {

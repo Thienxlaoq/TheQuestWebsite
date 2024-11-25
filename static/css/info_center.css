@@ -47,9 +47,21 @@ body, html {
 
 .info a {
     text-decoration: none; /* Убираем подчеркивание у ссылки */
-    font-size: 18px;
+    font-size: 20px;
     color: #797979;
+    letter-spacing: 1px;
+    line-height: 24px; /* Совпадает с высотой иконки */
+    font-weight: 200;
 }
+
+.right-arrow-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px; /* Отступ от текста */
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
 
 .main-content p {
     font-size: 15px;
