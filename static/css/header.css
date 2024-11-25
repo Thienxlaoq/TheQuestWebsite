@@ -146,17 +146,22 @@
     position: fixed;
     width: 950px;
     height: 850px;
-    max-width: 90%; /* чтобы блок не выходил за пределы экрана на маленьких устройствах */
-    background-color: rgb(0, 0, 0);
+    max-width: 90%; /* Адаптивность для маленьких экранов */
+    background-color: rgb(0, 0, 0); /* Фон */
+    border: 1px solid #2F2F2F; /* Рамка толщиной 1px с нужным цветом */
     z-index: 2;
+    box-sizing: border-box; /* Учет рамки в размерах блока */
+    border-radius: 10px;
 }
 
+
 #close-block {
-    margin-top: 15px;
-    margin-left: 900px;
-    width: 30px;
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    width: 30px; 
     height: 30px;
-    background-color: #11111100;
+    background-color: transparent; 
     border: none;
     cursor: pointer;
 }
@@ -173,6 +178,8 @@
 
 #main-text p{
     font-size: 98px;
+    font-weight: 800;
+    font-style: italic;
     color: #5EF6FF;
     text-align: center;
     margin: 0;
@@ -183,9 +190,8 @@
     width: 790px;
     height: 370px;
     display: flex;
-    justify-content:space-between; /* Выравнивание элементов в начале */
-    gap: 5px; /* Отступ между элементами */
-
+    justify-content: space-between; /* Распределение элементов */
+    gap: 5px; /* Расстояние между элементами */
 }
 
 #socials a{
@@ -232,5 +238,6 @@
     color: #111;
     text-align: center;
     font-size: 19px;
+    font-weight: bold;
     cursor: pointer;
 }
