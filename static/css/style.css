@@ -279,3 +279,34 @@ main {
     background-color: #FFCE00; /* Цвет заполнения */
     transition: width 0.3s ease; /* Анимация плавного заполнения */
 }
+
+/* SOCIAL ICONS */
+.social-tt:hover {
+    transform: scale(1.07);
+    transition: all 0.5s ease;
+    content: url(/static/img/social-tt-hover.png);
+}
+
+.social-tg:hover {
+    transform: scale(1.07);
+    transition: all 0.5s ease;
+    content: url(/static/img/social-tg-hover.png);
+}
+
+.social-inst:hover {
+    transform: scale(1.07);
+    transition: all 0.5s ease;
+    content: url(/static/img/social-inst-hover.png);
+}
+
+.social-ds:hover {
+    transform: scale(1.07);
+    transition: all 0.5s ease;
+    content: url(/static/img/social-ds-hover.png);
+}
+
+.social-x:hover {
+    transform: scale(1.07);
+    transition: all 0.5s ease;
+    content: url(/static/img/social-x-hover.png);
+}
