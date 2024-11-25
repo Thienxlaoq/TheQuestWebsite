@@ -112,59 +112,48 @@ main {
     color: #FFCE00; /* Специальный цвет для "The Quest" */
 }
 
-.fixed-text-block {
-    position: fixed;
-    bottom: 100px; /* Отступ от низа */
-    left: 250px; /* Отступ слева */
+
+.privacy-policy {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 100px;
+    position: fixed;
+}
+
+.fixed-text-block {
+    padding-left: 250px; /* Отступ слева */
     gap: 15px; /* Отступ между текстами */
     color: #FFF; /* Цвет текста */
     font-family: 'Chakra Petch', sans-serif;
     font-size: 18px;
     text-align: left;
+    color: #B1B1B1;
 }
 
-/* Стили для текста в блоке */
-.first-text {
-    font-weight: 500;
-    font-size: 17px;
-    color: #5EF6FF; /* Цвет текста */
-    margin: 0px;
-    font-weight: bold;
-}
-
-.second-text {
-    font-weight: 500;
-    font-size: 16px;
-    color: #B1B1B1; /* Цвет текста */
-    margin: 0px;
-    font-weight: 300;
-}
-
-/* Стили для ссылки */
-.fixed-text-block a {
-    color: inherit; /* Цвет ссылки унаследует цвет текста блока */
-}
-
-/* Ховер-эффект для ссылки */
-.fixed-text-block a:hover {
-    color: #5EF6FF; /* Цвет текста при наведении */
+.fixed-text-block .first-text {
+    color: #5EF6FF;
+    margin-bottom: 15px;
 }
 
 .privacy-block {
-    position: fixed;
-    bottom: 120px; /* Отступ от низа */
-    right: 250px; /* Отступ от правого края */
-    display: flex;
-    flex-direction: row;
+    padding-right: 250px; /* Отступ справа */
     gap: 15px; /* Отступ между текстами */
     color: #FFF; /* Цвет текста */
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 16px;
-    text-align: left;
+    font-size: 18px;
 }
 
-.privacy-text{
+.second-text a{
     color: #B1B1B1;
+}
+
+.second-text a:hover {
+    color: #5EF6FF;
+}
+
+.privacy-block a{
+    color: #B1B1B1;
+    padding-left: 30px;
 }

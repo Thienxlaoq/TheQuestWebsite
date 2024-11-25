@@ -14,41 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('mouseout', () => {
         button.src = defaultSrc;
     });
-
-    // Переключатель языка
-    const languageSwitch = document.querySelector('.language-switch');
-    const languageMenu = document.querySelector('.language-menu');
-    const arrowIcon = document.querySelector('.arrow-icon');
-
-    if (!languageSwitch || !languageMenu || !arrowIcon) {
-        console.error('Элементы переключателя языка не найдены.');
-        return;
-    }
-
-    // Открытие/закрытие меню
-    languageSwitch.addEventListener('click', (e) => {
-        e.stopPropagation(); // Останавливаем всплытие события
-        languageSwitch.classList.toggle('active');
-    });
-
-    // Закрытие меню при клике вне области
-    document.addEventListener('click', (e) => {
-        if (!languageSwitch.contains(e.target)) {
-            languageSwitch.classList.remove('active');
-        }
-    });
-
-    // Поворот стрелки при открытии меню
-    const observer = new MutationObserver(() => {
-        if (languageSwitch.classList.contains('active')) {
-            arrowIcon.style.transform = 'rotate(180deg)';
-        } else {
-            arrowIcon.style.transform = 'rotate(0deg)';
-        }
-    });
-
-    observer.observe(languageSwitch, { attributes: true, attributeFilter: ['class'] });
-
 });
 
 function showContent(sectionId) {
@@ -69,4 +34,59 @@ function showContent(sectionId) {
     event.currentTarget.classList.add('active');
   };
 
-  
+
+// OUR SOCIALS
+document.querySelector('.our-socials-btn').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'flex'; // Используйте flex для центрирования
+});
+
+document.getElementById('close-block').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+});
+
+// Обработчик клика вне блока
+document.addEventListener('click', function(event) {
+    const overlay = document.getElementById('overlay');
+    
+    // Проверяем, был ли клик вне блока
+    if (overlay.style.display === 'flex' && !document.getElementById('content-block').contains(event.target) && event.target !== document.querySelector('.our-socials-btn')) {
+        overlay.style.display = 'none';
+    }
+});
+
+// LANGUAGE SWITCH
+document.addEventListener('DOMContentLoaded', function() {
+    const languageSwitch = document.querySelector('.language-switch');
+    const languageMenu = document.querySelector('.language-menu');
+    
+    languageSwitch.addEventListener('click', function(event) {
+        event.stopPropagation(); // Остановить всплытие события
+        languageSwitch.classList.toggle('active'); // Переключаем активное состояние
+    });
+
+    languageMenu.addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            const selectedLanguage = event.target.getAttribute('data-lang');
+            console.log('Выбранный язык:', selectedLanguage); // Здесь можно добавить логику для изменения языка
+            languageSwitch.classList.remove('active'); // Закрываем меню после выбора
+        }
+    });
+    
+    // Закрыть меню, если кликнули вне его
+    document.addEventListener('click', function() {
+        languageSwitch.classList.remove('active');
+    });
+
+    document.addEventListener('click', function() {
+        languageSwitch.classList.remove('active');
+    });
+    
+    function changeLanguage(lang) {
+        const translatableElements = document.querySelectorAll('.translatable');
+        translatableElements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            element.textContent = translations[lang][key];
+        });
+    }
+});
+

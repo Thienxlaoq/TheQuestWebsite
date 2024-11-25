@@ -24,22 +24,55 @@
 
 <body>
     <header class="header {{ header_class }}">
+        
       <div class="logo">
           <a href="/map"><img src="static/img/logoquest.png" alt="The Quest Logo"></a>
       </div>
+
       <div class="header-right">
           <div class="language-switch">
-              <img src="static/img/language-icon.svg" class="icon" alt="Language Icon">
-              <span>Select language</span>
-              <img src="static/img/arrow-icon.svg" class="arrow-icon" alt="Arrow Icon">
-              <ul class="language-menu">
-                  <li data-lang="en">English</li>
-                  <li data-lang="ru">Русский</li>
-                  <li data-lang="es">Español</li>
-                  <li data-lang="fr">Français</li>
-              </ul>
-          </div>
+            <img src="static/img/language-icon.svg" class="icon" alt="Language Icon">
+            <span>Select language</span>
+            <img src="static/img/arrow-icon.svg" class="arrow-icon" alt="Arrow Icon">
+            <ul class="language-menu">
+                <li data-lang="en">English</li>
+                <li data-lang="ru">Русский</li>
+                <li data-lang="es">Español</li>
+                <li data-lang="fr">Français</li>
+            </ul>
+        </div>
+          
+
           <button class="our-socials-btn">OUR SOCIALS</button>
+          <div id="overlay" style="display: none;">
+            <div id="content-block">
+                <button type="button" id="close-block"><img src="/static/img/icon-close.png" alt="Кнопка" /></button>
+                
+                <div id="block">
+                    <div id="main-text">
+                        <p>OUR SOCIALS</p>
+                    </div>
+                    
+                    <div id="socials">
+                        <a href="/map"><img src="/static/img/social-tt.png" alt="The Quest Logo"></a>
+                        <a href="/map"><img src="/static/img/social-tg.png" alt="The Quest Logo"></a>
+                        <a href="/map"><img src="/static/img/social-inst.png" alt="The Quest Logo"></a>
+                        <a href="/map"><img src="/static/img/social-ds.png" alt="The Quest Logo"></a>
+                        <a href="/map"><img src="/static/img/social-x.png" alt="The Quest Logo"></a>
+                    </div>
+
+                    <div id="contact">
+                        <hr id="line">
+                        <span id="text">CONTACT</span>
+                        <hr id="line">
+                    </div>
+
+                    <div id="send-msg">
+                        <button type="button" id="send-btn">Send Message</button>
+                    </div>
+                </div>
+            </div>
+          </div>
       </div>
     </header>
   {% block body %}
