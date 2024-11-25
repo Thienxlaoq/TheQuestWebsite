@@ -281,32 +281,38 @@ main {
 }
 
 /* SOCIAL ICONS */
-.social-tt:hover {
-    transform: scale(1.07);
-    transition: all 0.5s ease;
-    content: url(/static/img/social-tt-hover.png);
+
+#socials {
+    display: flex;
+    gap: 10px;
 }
 
-.social-tg:hover {
-    transform: scale(1.07);
-    transition: all 0.5s ease;
-    content: url(/static/img/social-tg-hover.png);
+.social-item {
+    display: inline-block;
+    position: relative;
 }
 
-.social-inst:hover {
-    transform: scale(1.07);
-    transition: all 0.5s ease;
-    content: url(/static/img/social-inst-hover.png);
+.social-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 300ms ease-out;
 }
 
-.social-ds:hover {
-    transform: scale(1.07);
-    transition: all 0.5s ease;
-    content: url(/static/img/social-ds-hover.png);
+/* Initially, hide the hover image */
+.social-item .hover {
+    opacity: 0;
 }
 
-.social-x:hover {
-    transform: scale(1.07);
-    transition: all 0.5s ease;
-    content: url(/static/img/social-x-hover.png);
+/* On hover, hide the normal image and show the hover image */
+.social-item:hover .normal {
+    opacity: 0;
 }
+
+.social-item:hover .hover {
+    opacity: 1;
+}
+
