@@ -194,6 +194,43 @@
     gap: 5px; /* Расстояние между элементами */
 }
 
+/* SOCIAL ICONS */
+
+#socials {
+    display: flex;
+    gap: 10px;
+}
+
+.social-item {
+    display: inline-block;
+    position: relative;
+}
+
+.social-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 300ms ease-out;
+}
+
+/* Initially, hide the hover image */
+.social-item .hover {
+    opacity: 0;
+}
+
+/* On hover, hide the normal image and show the hover image */
+.social-item:hover .normal {
+    opacity: 0;
+}
+
+.social-item:hover .hover {
+    opacity: 1;
+}
+
+
 #socials a{
     width: 150px;
     height: 350px;
