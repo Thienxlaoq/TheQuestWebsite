@@ -265,12 +265,12 @@ main {
 
 .progress-bar {
     width: 420px; /* Ширина прогресс-бара */
-    height: 4px; /* Высота прогресс-бара */
+    height: 3px; /* Высота прогресс-бара */
     background-color: transparent; /* Цвет фона */
     border: 1px solid #FFCE00; /* Рамка */
     overflow: hidden; /* Скрываем содержимое за границей */
     position: relative;
-    padding:5px 8px 5px 8px;
+    padding:4px 7px 4px 7px;
 }
 
 .progress {

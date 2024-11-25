@@ -1,102 +1,156 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('The Quest ready!');
 
-    // Кнопка
-    const button = document.querySelector('.cta-button');
-    const container = document.querySelector('.centered-content');
-    const defaultSrc = 'static/img/button-default.svg';
-    const hoverSrc = 'static/img/button-hover.svg';
+    /**
+     * Утилита для привязки модального окна
+     * @param {string} modalId - ID модального окна
+     * @param {string} triggerSelector - Селектор элемента, открывающего окно
+     * @param {string} closeSelector - Селектор кнопки закрытия окна
+     * @param {function} onOpenCallback - Функция, вызываемая при открытии окна
+     */
+    function setupModal(modalId, triggerSelector, closeSelector, onOpenCallback = null) {
+        const modal = document.getElementById(modalId);
+        const trigger = document.querySelector(triggerSelector);
+        const closeButton = modal?.querySelector(closeSelector);
 
-    button.addEventListener('mouseover', () => {
-        button.src = hoverSrc;
-    });
-
-    button.addEventListener('mouseout', () => {
-        button.src = defaultSrc;
-    });
-});
-
-function showContent(sectionId) {
-    // Скрыть весь контент
-    document.querySelectorAll('.content').forEach((content) => {
-      content.style.display = 'none';
-    });
-  
-    // Показать выбранный контент
-    document.getElementById(sectionId).style.display = 'block';
-  
-    // Убрать "active" со всех кнопок
-    document.querySelectorAll('.menu-button').forEach((button) => {
-      button.classList.remove('active');
-    });
-  
-    // Добавить "active" к нажатой кнопке
-    event.currentTarget.classList.add('active');
-  };
-
-
-// OUR SOCIALS
-document.querySelector('.our-socials-btn').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'flex'; // Используйте flex для центрирования
-});
-
-document.getElementById('close-block').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'none';
-});
-
-// LANGUAGE SWITCH
-document.addEventListener('DOMContentLoaded', function() {
-    const languageSwitch = document.querySelector('.language-switch');
-    const languageMenu = document.querySelector('.language-menu');
-    
-    languageSwitch.addEventListener('click', function(event) {
-        event.stopPropagation(); // Остановить всплытие события
-        languageSwitch.classList.toggle('active'); // Переключаем активное состояние
-    });
-
-    languageMenu.addEventListener('click', function(event) {
-        if (event.target.tagName === 'LI') {
-            const selectedLanguage = event.target.getAttribute('data-lang');
-            console.log('Выбранный язык:', selectedLanguage); // Здесь можно добавить логику для изменения языка
-            languageSwitch.classList.remove('active'); // Закрываем меню после выбора
+        if (!modal || !trigger || !closeButton) {
+            console.warn(`Не удалось привязать модальное окно: modalId=${modalId}`);
+            return;
         }
-    });
-    
-    // Закрыть меню, если кликнули вне его
-    document.addEventListener('click', function() {
-        languageSwitch.classList.remove('active');
-    });
 
-    document.addEventListener('click', function() {
-        languageSwitch.classList.remove('active');
-    });
-    
-});
+        // Открытие окна
+        trigger.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            if (typeof onOpenCallback === 'function') {
+                onOpenCallback(); // Вызываем дополнительную функцию при открытии
+            }
+        });
 
-// GET THE QUEST
-document.querySelector('.get-the-quest').addEventListener('click', function() {
-    document.getElementById('overlaytwo').style.display = 'flex'; // Используйте flex для центрирования
-});
+        // Закрытие окна через кнопку
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
 
-document.getElementById('close-block-two').addEventListener('click', function() {
-    document.getElementById('overlaytwo').style.display = 'none';
-});
+        // Закрытие окна при клике вне содержимого
+        modal.addEventListener('click', (event) => {
+            if (!event.target.closest('.modal-content')) {
+                modal.style.display = 'none';
+            }
+        });
 
+        // Закрытие окна по ESC
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        });
+    }
 
-
-// progress-bar
-
-document.addEventListener('DOMContentLoaded', () => {
-    const progressElement = document.getElementById('progress');
-    let progress = 0; // Начальное значение прогресса
-    const targetProgress = 70; // Целевой процент
-
-    const interval = setInterval(() => {
-        if (progress < targetProgress) {
-            progress++;
-            progressElement.style.width = `${progress}%`;
-        } else {
-            clearInterval(interval); // Остановка таймера на 70%
+    /**
+     * Инициализация прогресс-бара
+     * @param {string} progressBarId - ID элемента прогресс-бара
+     */
+    function startProgressBar(progressBarId) {
+        const progressElement = document.getElementById(progressBarId);
+        if (!progressElement) {
+            console.warn(`Прогресс-бар с ID '${progressBarId}' не найден.`);
+            return;
         }
-    }, 30); // Интервал обновления в миллисекундах
+
+        let progress = 0;
+        const targetProgress = 70;
+
+        const interval = setInterval(() => {
+            if (progress < targetProgress) {
+                progress++;
+                progressElement.style.width = `${progress}%`;
+            } else {
+                clearInterval(interval);
+            }
+        }, 30);
+    }
+
+    // Привязка модальных окон
+    setupModal(
+        'overlay', 
+        '.our-socials-btn', 
+        '#close-block'
+    );
+
+    setupModal(
+        'overlaytwo', 
+        '.get-the-quest', 
+        '#close-block-two', 
+        () => startProgressBar('progress') // Привязываем запуск прогресс-бара
+    );
+
+    /**
+     * Переключение языка
+     */
+    function initLanguageSwitch() {
+        const languageSwitch = document.querySelector('.language-switch');
+        const languageMenu = document.querySelector('.language-menu');
+
+        if (!languageSwitch || !languageMenu) return;
+
+        // Открыть/закрыть меню
+        languageSwitch.addEventListener('click', (event) => {
+            event.stopPropagation();
+            languageSwitch.classList.toggle('active');
+        });
+
+        // Выбор языка
+        languageMenu.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                const selectedLanguage = event.target.getAttribute('data-lang');
+                console.log(`Выбранный язык: ${selectedLanguage}`);
+                languageSwitch.classList.remove('active');
+            }
+        });
+
+        // Закрыть меню при клике вне
+        document.addEventListener('click', () => {
+            languageSwitch.classList.remove('active');
+        });
+    }
+    initLanguageSwitch();
+
+    /**
+     * Эффект hover на "OUR SOCIALS"
+     */
+    function initSocialsHover() {
+        const socialsButton = document.querySelector('.our-socials-btn');
+        const socialsBlocks = document.querySelectorAll('.social-item');
+
+        if (!socialsButton || socialsBlocks.length === 0) return;
+
+        socialsButton.addEventListener('mouseover', () => {
+            socialsBlocks.forEach((block) => block.classList.add('hover'));
+        });
+
+        socialsButton.addEventListener('mouseout', () => {
+            socialsBlocks.forEach((block) => block.classList.remove('hover'));
+        });
+    }
+    initSocialsHover();
+
+    /**
+     * Эффект hover для кнопки "Get The Quest"
+     */
+    function initCtaButtonHover() {
+        const ctaButton = document.querySelector('.cta-button');
+        if (!ctaButton) return;
+
+        const defaultSrc = ctaButton.getAttribute('data-default-src');
+        const hoverSrc = ctaButton.getAttribute('data-hover-src');
+
+        ctaButton.addEventListener('mouseover', () => {
+            ctaButton.src = hoverSrc;
+        });
+
+        ctaButton.addEventListener('mouseout', () => {
+            ctaButton.src = defaultSrc;
+        });
+    }
+    initCtaButtonHover();
 });

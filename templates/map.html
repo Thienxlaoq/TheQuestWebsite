@@ -13,37 +13,50 @@
   <main>
 
     <div class="centered-content">
-        <div class="centered-text">
+      <div class="centered-text">
           <span class="welcome">Welcome to</span>
           <h1 class="title">The Quest</h1>
-        </div>
-        <div class="cta-button-container">
+      </div>
+      <div class="cta-button-container">
           <button class="get-the-quest get"></button>
-          <div id="overlaytwo" style="display: none;">
-            <div id="content-block">
-              <button type="button" id="close-block-two"><img src="/static/img/icon-close.png" alt="Close Button" /></button>
-              
+      </div>
+  
+      <!-- Модальное окно -->
+      <div id="overlaytwo" class="modal" style="display: none;">
+          <div id="content-block" class="modal-content">
+              <!-- Кнопка закрытия -->
+              <button type="button" id="close-block-two" class="modal-close">
+                  <img src="/static/img/icon-close.png" alt="Close Button" />
+              </button>
+  
+              <!-- Основной текст -->
               <div id="main-text">
                   <p>SOON...</p>
               </div>
-              
+  
+              <!-- Изображение -->
               <div id="chill-man">
-                <img src="/static/img/chill-man.png" alt="Chill Man">
+                  <img src="/static/img/chill-man.png" alt="Chill Man">
               </div>
-
+  
+              <!-- Описание -->
               <div id="description">
-                <p><b>The game <strong>"The Quest"</strong> is still in development.</b><br>Subscribe to our social networks to follow the news.<br></p>
+                  <p>
+                      <b>The game <strong>"The Quest"</strong> is still in development.</b><br>
+                      Subscribe to our social networks to follow the news.<br>
+                  </p>
               </div>
-
+  
+              <!-- Прогресс-бар -->
               <div id="loading">
-                <div class="progress-bar">
-                  <div class="progress" id="progress"></div>
-                </div>
-              </div>              
-            </div>
+                  <div class="progress-bar">
+                      <div class="progress" id="progress" style="width: 0%;"></div>
+                  </div>
+              </div>
           </div>
-        </div>
-    </div>
+      </div>
+  </div>
+  
     
   </main>
 
