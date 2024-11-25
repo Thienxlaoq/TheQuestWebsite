@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCtaButtonHover();
 
 
-    
+
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
@@ -165,3 +165,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
