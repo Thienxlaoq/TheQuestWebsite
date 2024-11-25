@@ -78,6 +78,6 @@ document.querySelector('.get-the-quest').addEventListener('click', function() {
     document.getElementById('overlaytwo').style.display = 'flex'; // Используйте flex для центрирования
 });
 
-document.getElementById('close-block2').addEventListener('click', function() {
+document.getElementById('close-block-two').addEventListener('click', function() {
     document.getElementById('overlaytwo').style.display = 'none';
 });
