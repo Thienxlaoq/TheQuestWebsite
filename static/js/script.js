@@ -81,3 +81,22 @@ document.querySelector('.get-the-quest').addEventListener('click', function() {
 document.getElementById('close-block-two').addEventListener('click', function() {
     document.getElementById('overlaytwo').style.display = 'none';
 });
+
+
+
+// progress-bar
+
+document.addEventListener('DOMContentLoaded', () => {
+    const progressElement = document.getElementById('progress');
+    let progress = 0; // Начальное значение прогресса
+    const targetProgress = 70; // Целевой процент
+
+    const interval = setInterval(() => {
+        if (progress < targetProgress) {
+            progress++;
+            progressElement.style.width = `${progress}%`;
+        } else {
+            clearInterval(interval); // Остановка таймера на 70%
+        }
+    }, 30); // Интервал обновления в миллисекундах
+});
