@@ -9,7 +9,7 @@
     color: #fff;
     position: relative;
     width: 100%;
-    z-index: 1000; /* На переднем плане */
+    z-index: 10; /* На переднем плане */
     box-sizing: border-box;
 }
 
@@ -164,6 +164,7 @@
     background-color: transparent; 
     border: none;
     cursor: pointer;
+    padding: 0;
 }
 
 #block {
@@ -180,7 +181,8 @@
     font-size: 98px;
     font-weight: 800;
     font-style: italic;
-    color: #5EF6FF;
+    color: transparent;
+    -webkit-text-stroke: 3px #5EF6FF;
     text-align: center;
     margin: 0;
     padding: 0;

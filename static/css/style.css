@@ -49,13 +49,13 @@ main {
 
 /* Аналогичные настройки для текста "Welcome to" */
 .centered-content .welcome {
-    font-size: 78px;
+    font-size: 88px;
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 600; /* semibold */
     font-style: italic; /* italic */
     color: transparent;
     -webkit-text-stroke: 2px #8B8B8B; /* Обводка текста */
-    line-height: 101px; /* Межстрочное расстояние */
+    line-height: 106px; /* Межстрочное расстояние */
     letter-spacing: -3px; /* Межбуквенное расстояние */
     transition: all 0.2s ; /* Эффект при уходе мыши */
 }
@@ -116,7 +116,7 @@ main {
 /* Hover эффект для всего блока */
 .centered-content:hover .welcome{
     color: #fff; /* Заполняем цветом */
-    -webkit-text-stroke: 0; /* Убираем обводку */ 
+    -webkit-text-stroke-color: white; /* Убираем обводку */ 
 }
 
 .centered-content:hover .title {
@@ -135,11 +135,10 @@ main {
 
 .fixed-text-block {
     padding-left: 250px; /* Отступ слева */
-    color: #FFF; /* Цвет текста */
     font-family: 'Chakra Petch', sans-serif;
     gap: 15px;
     text-align: left;
-    color: #B1B1B1;   
+    color: #7E7E7E;   
 }
 
 .fixed-text-block .first-text {
@@ -159,14 +158,14 @@ main {
 
 .privacy-block {
     padding-right: 250px; /* Отступ справа */
-    color: #FFF; /* Цвет текста */
+    color: #7E7E7E; /* Цвет текста */
     font-family: 'Chakra Petch', sans-serif;
     font-size: 16px;
     font-weight: 400;
 }
 
 .second-text a{
-    color: #B1B1B1;
+    color: #7E7E7E;
     margin: 0;
     padding: 0;
 }
@@ -176,10 +175,13 @@ main {
 }
 
 .privacy-block a{
-    color: #B1B1B1;
+    color: #7E7E7E;
     padding-left: 30px;
 }
 
+.privacy-block a:hover {
+    color: #FFCE00;
+}
 
 /* GOT THE QUEST */
 #overlaytwo {
@@ -191,8 +193,8 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 204, 0, 0.034);
-    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 11;
 }
 
 #overlaytwo #content-block {
@@ -217,6 +219,7 @@ main {
     height: 30px;
     background-color: transparent; 
     border: none;
+    padding: 0;
     cursor: pointer;
 }
 
@@ -228,18 +231,20 @@ main {
 }
 
 #overlaytwo #main-text {
-    margin: 0;
+    margin: 20px 0 0 0;
     padding: 0;
-    
 }
 #overlaytwo #main-text p{
-    font-size: 38px;
-    color: #FFCE00;
+    font-size: 48px;
+    font-weight: bold;
+    -webkit-text-stroke: 2px #FFCE00;
+    color: transparent ;
 }
 
 #overlaytwo #description p{
     font-size: 18px;
     color: #747474;
+    margin:0;
 }
 
 #overlaytwo #description b{
@@ -248,19 +253,28 @@ main {
     line-height: 35px;
 }
 
+#overlaytwo #description a{
+    font-size: 18px;
+    color: #747474;
+}
+#overlaytwo #description a:hover{
+    color: #FFCE00;
+}
+
 #overlaytwo #description strong{
     color: #FFCE00;
 }
 
 #overlaytwo #chill-man {
     margin-bottom: 35px;
+    margin-top:50px;
 }
 
 #loading {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .progress-bar {
